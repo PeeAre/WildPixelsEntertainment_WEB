@@ -1,2 +1,2 @@
-# WildPixelsEntertainment_WEB
+# WildPixels_WEB
 Entertainment WEB platform
