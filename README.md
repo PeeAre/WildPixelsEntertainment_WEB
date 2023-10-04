@@ -1,2 +1,2 @@
-# WildPixels_WEB
+# WildPixels
 Wild Pixels Entertainment platform
