@@ -1,0 +1,27 @@
+version: "3"
+services:
+  app: 
+    container_name: ep-quest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: peeare/ep-quest-app:latest
+    volumes:
+      - /home/ep-quest/models:/app/wwwroot/models
+    privileged: true
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - postgres_db
+  postgres_db:
+    image: postgres:latest
+    container_name: postgres_deamon
+    restart: always
+    environment:
+      POSTGRES_USER: silence
+      POSTGRES_PASSWORD: 12345tima
+      POSTGRES_DB: quest
+    ports:
+      - "5432:5432"
