@@ -1,0 +1,59 @@
+nav {
+  height: 5rem;
+  padding: 1rem 1rem;
+  margin: 2rem 1rem;
+  top: 0.5rem;
+  position: sticky;
+  display: flex;
+
+  .blur-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: white, $alpha: 0.05);
+    border: 1px solid gray;
+    border-radius: 2px;
+    // backdrop-filter: grayscale(1);
+    backdrop-filter: blur(5px);
+  }
+
+  .logo-container {
+    min-width: 16rem;
+    height: 100%;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -1rem;
+      background-image: url("/images/logo_without_text.png");
+      background-repeat: no-repeat;
+      background-size: 8rem 8rem;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .links-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .authorization-container {
+    padding: 0 0.5rem;
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    .btn {
+      z-index: 10;
+    }
+  }
+}
