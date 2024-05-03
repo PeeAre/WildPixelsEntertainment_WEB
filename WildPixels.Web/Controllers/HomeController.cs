@@ -2,17 +2,22 @@
 
 namespace WildPixels.Web.Controllers
 {
+    public class User
+    {
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+    }
+
     public class HomeController : Controller
     {
         public HomeController()
         {
         }
         [HttpGet]
-        public IActionResult Index()
+        public string Index()
         {
-            ViewBag.Title = "Wild Pixels";
-
-            return View();
+            return "Wild Pixels";
         }
     }
 }
