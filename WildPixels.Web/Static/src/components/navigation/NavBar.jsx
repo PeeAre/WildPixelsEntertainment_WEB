@@ -1,5 +1,5 @@
 import React from "react";
-import "./NavBar.scss";
+import "./NavBar.css";
 import NavBarButton from "../buttons/NavBarButton";
 import LoginButton from "../buttons/LoginButton";
 

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WildPixels.Web", "WildPixels.Web\WildPixels.Web.csproj", "{8C4B275D-7E28-48BB-BF00-28348B0E0315}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WildPixels.Core", "WildPixels.Core\WildPixels.Core.csproj", "{D6A7832B-6F51-4A24-BA18-5DB47FF5DC5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WildPixels.Core", "WildPixels.Core\WildPixels.Core.csproj", "{D6A7832B-6F51-4A24-BA18-5DB47FF5DC5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WildPixels.Application", "WildPixels.Application\WildPixels.Application.csproj", "{1902D0A4-ED8A-4130-BA6B-D1F5DDBC0CFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WildPixels.Application", "WildPixels.Application\WildPixels.Application.csproj", "{1902D0A4-ED8A-4130-BA6B-D1F5DDBC0CFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WildPixels.Infrasructure", "WildPixels.Infrasructure\WildPixels.Infrasructure.csproj", "{6A1A1E91-D9AC-413D-9BC3-EB6ADBC352D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WildPixels.Infrasructure", "WildPixels.Infrasructure\WildPixels.Infrasructure.csproj", "{6A1A1E91-D9AC-413D-9BC3-EB6ADBC352D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WildPixels.Web", "WildPixels.Web\WildPixels.Web.csproj", "{84AED11E-5838-4CDC-80E1-BBC30A064E94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8C4B275D-7E28-48BB-BF00-28348B0E0315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C4B275D-7E28-48BB-BF00-28348B0E0315}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C4B275D-7E28-48BB-BF00-28348B0E0315}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C4B275D-7E28-48BB-BF00-28348B0E0315}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6A7832B-6F51-4A24-BA18-5DB47FF5DC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6A7832B-6F51-4A24-BA18-5DB47FF5DC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6A7832B-6F51-4A24-BA18-5DB47FF5DC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{6A1A1E91-D9AC-413D-9BC3-EB6ADBC352D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A1A1E91-D9AC-413D-9BC3-EB6ADBC352D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A1A1E91-D9AC-413D-9BC3-EB6ADBC352D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84AED11E-5838-4CDC-80E1-BBC30A064E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84AED11E-5838-4CDC-80E1-BBC30A064E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84AED11E-5838-4CDC-80E1-BBC30A064E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84AED11E-5838-4CDC-80E1-BBC30A064E94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,20 +1,17 @@
+@charset "UTF-8";
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
   background-color: #11042d;
-  background-image: linear-gradient(to bottom, rgba(white, 0) 40%, #11042d),
-    url("/images/background_3.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, #11042d), url("/images/background_3.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /* Указываем box sizing */
@@ -58,13 +55,12 @@ body {
 
 main {
   width: 100%;
-  height: 100%;
+  height: 200vh;
   padding: 0 2rem;
-
-  .main-wrapper {
-    width: 100%;
-    height: auto;
-  }
+}
+main .main-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -75,7 +71,8 @@ ol[class] {
 
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 /* Упрощаем работу с изображениями */
@@ -105,4 +102,4 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
+}/*# sourceMappingURL=index.css.map */

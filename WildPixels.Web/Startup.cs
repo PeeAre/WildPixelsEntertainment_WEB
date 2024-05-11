@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore;
-
-namespace WildPixels.Web
+﻿namespace WildPixels.Web
 {
     public class Startup
     {
@@ -16,8 +14,6 @@ namespace WildPixels.Web
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //env.WebRootPath
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -33,7 +29,7 @@ namespace WildPixels.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller}/{action}/{id?}");
             });
             app.UseHttpsRedirection();
             app.UseCors(corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin()

@@ -1,5 +1,5 @@
 import React from "react";
-import "./SubmitButton.scss";
+import "./SubmitButton.css";
 
 function SubmitButton(props) {
   const text = props.text;
