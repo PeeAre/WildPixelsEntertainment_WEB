@@ -9,11 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.29">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Static\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WildPixels.Application\WildPixels.Application.csproj" />
+    <ProjectReference Include="..\WildPixels.Core\WildPixels.Core.csproj" />
+    <ProjectReference Include="..\WildPixels.Infrastructure\WildPixels.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

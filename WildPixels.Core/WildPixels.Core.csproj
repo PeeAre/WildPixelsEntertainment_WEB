@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Aggregates\UserAggregate\Events\" />
+    <Folder Include="Aggregates\UserAggregate\Handlers\" />
+    <Folder Include="Aggregates\UserAggregate\Specifications\" />
+  </ItemGroup>
+
 </Project>

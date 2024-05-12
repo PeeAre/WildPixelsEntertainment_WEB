@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Nodes;
 
-namespace Legalex.Web.Controllers.API
+namespace WildPixels.Web.Controllers.API
 {
     [ApiController]
     [Route("[controller]")]
@@ -11,13 +11,13 @@ namespace Legalex.Web.Controllers.API
         public abstract Task<IActionResult> Create(JsonObject model);
 
         [HttpPut]
-        public abstract Task<IActionResult> Update(string id);
+        public abstract Task<IActionResult> Update();
 
         [HttpGet]
-        public abstract Task<IActionResult> Get(string id);
+        public abstract Task<IActionResult> GetAll();
 
         [HttpDelete]
-        public abstract Task<IActionResult> Delete(string id);
+        public abstract Task<IActionResult> DeleteById(string id);
 
 
     }

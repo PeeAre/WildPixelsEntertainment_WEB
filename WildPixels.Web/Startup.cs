@@ -1,4 +1,10 @@
-﻿namespace WildPixels.Web
+﻿using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
+using WildPixels.Application.UserProcess;
+using WildPixels.Infrastructure.Data;
+using WildPixels.Infrastructure.Services;
+
+namespace WildPixels.Web
 {
     public class Startup
     {
@@ -11,6 +17,14 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration["ConnectionStrings:MSSQL_Connection"]);
+            }, ServiceLifetime.Transient);
+            //var asm = AppDomain.CurrentDomain.GetAssemblies().
+            //    SingleOrDefault(assembly => assembly.GetName().Name == "WildPixels.Application");
+            services.AddMediatR(config => config.RegisterServicesFromAssemblyContaining(typeof(UserDTO)));
+            services.AddUnitOfWork();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
