@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Nodes;
 
-namespace WildPixels.Web.Controllers.API
+namespace WildPixels.Web.Controllers.BaseControllers
 {
     public interface IBaseAPI
     {

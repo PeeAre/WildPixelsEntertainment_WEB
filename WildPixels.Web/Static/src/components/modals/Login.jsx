@@ -1,54 +1,82 @@
 import React from "react";
-import { useFormik } from "formik";
-import "./Login.scss";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+
 import SubmitButton from "../buttons/SubmitButton";
+import { IdentityProvider } from "../data/IdentityProvider";
+import "./Login";
 
-const SignupForm = () => {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
-
-  return (
-    <div className="modal-container" onClick={(x) => x.stopPropagation()}>
-      <div className="logo-container"></div>
-      <div className="invitation-container">
-        <h1>Sign in to your account</h1>
-      </div>
-      <form className="login-form" onSubmit={formik.handleSubmit}>
-        <div className="field">
-          <label htmlFor="email">Email Address</label>
-          <input
-            className="inp"
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-          />
-        </div>
-        <div className="field">
-          <label htmlFor="password">Password</label>
-          <input
-            className="inp"
-            id="password"
-            name="password"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.lastName}
-          />
-        </div>
-
-        <SubmitButton text="sign in" onClick={() => console.log("qwe")} />
-      </form>
+const SignupForm = () => (
+  <div className="modal-container" onClick={(x) => x.stopPropagation()}>
+    <div className="logo-container"></div>
+    <div className="invitation-container">
+      <h1>Registration</h1>
     </div>
-  );
-};
+    <Formik
+      initialValues={{ login: "", email: "", password: "" }}
+      validate={(values) => {
+        const errors = {};
+
+        if (!values.login) {
+          errors.login = "Required";
+        }
+
+        if (!values.email) {
+          errors.email = "Required";
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = "Invalid email address";
+        }
+
+        if (!values.password) {
+          errors.password = "Required";
+        } else if (values.password.length < 8) {
+          errors.password = "Too small";
+        }
+
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          console.log(JSON.stringify(values, null, 2));
+          IdentityProvider.login({
+            Name: values.login,
+            Email: values.email,
+            Password: values.password,
+          });
+          setSubmitting(false);
+        }, 200);
+      }}
+    >
+      {({ isSubmitting }, validate) => (
+        <Form>
+          <div className="login-form">
+            <div className="field">
+              <span>Login</span>
+              <Field type="login" name="login" />
+              <ErrorMessage className="error" name="login" component="div" />
+            </div>
+            <div className="field">
+              <span>Email</span>
+              <Field type="email" name="email" />
+              <ErrorMessage className="error" name="email" component="div" />
+            </div>
+            <div className="field">
+              <span>Password</span>
+              <Field type="password" name="password" />
+              <ErrorMessage className="error" name="password" component="div" />
+            </div>
+            <SubmitButton
+              text="register"
+              onClick={() => console.log("submitting...")}
+              disabled={isSubmitting}
+            />
+          </div>
+        </Form>
+      )}
+    </Formik>
+  </div>
+);
 
 function Login(props) {
   const setActive = props.setActive;

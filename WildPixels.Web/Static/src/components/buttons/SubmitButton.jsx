@@ -1,14 +1,23 @@
 import React from "react";
-import "./SubmitButton.css";
+
+import "./SubmitButton";
 
 function SubmitButton(props) {
   const text = props.text;
+  const disabled = props.disabled;
   const onClick = props.onClick;
 
+  console.log(disabled);
+
   return (
-    <div onClick={() => onClick()} className="btn-3">
+    <button
+      type="submit"
+      onClick={() => onClick()}
+      className="btn-3"
+      disabled={disabled}
+    >
       {text}
-    </div>
+    </button>
   );
 }
 

@@ -2,15 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import Router from "./components/routing/Router";
+import Root from "@components/Root";
+import "./index_style";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Router />
+    <Root />
   </BrowserRouter>
 );
-
-reportWebVitals();

@@ -26,9 +26,9 @@ nav {
     &:after {
       content: "";
       position: absolute;
-      top: 0;
+      top: 0.1rem;
       left: -1rem;
-      background-image: url("/images/logo_without_text.png");
+      background-image: "/images/logo_without_text.png";
       background-repeat: no-repeat;
       background-size: 8rem 8rem;
       width: 100%;

@@ -1,7 +1,8 @@
 import React from "react";
-import "./NavBar.css";
+
 import NavBarButton from "../buttons/NavBarButton";
 import LoginButton from "../buttons/LoginButton";
+import "./NavBar";
 
 function NavBar(props) {
   const setLoginModalActive = props.setLoginModalActive;

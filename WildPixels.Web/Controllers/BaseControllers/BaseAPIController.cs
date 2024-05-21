@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Nodes;
 
-namespace WildPixels.Web.Controllers.API
+namespace WildPixels.Web.Controllers.BaseControllers
 {
     [ApiController]
     [Route("[controller]")]
-    abstract public class BaseApiController : ControllerBase, IBaseAPI
+    abstract public class BaseAPIController : ControllerBase, IBaseAPI
     {
         [HttpPost]
         public abstract Task<IActionResult> Create(JsonObject model);
@@ -18,7 +18,5 @@ namespace WildPixels.Web.Controllers.API
 
         [HttpDelete]
         public abstract Task<IActionResult> DeleteById(string id);
-
-
     }
 }

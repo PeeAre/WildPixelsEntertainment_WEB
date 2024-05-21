@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import NavBar from "../navigation/NavBar";
-import Home from "../../pages/Home";
-import About from "../../pages/About";
-import Something from "../../pages/Something";
-import Same from "../../pages/Same";
-import Login from "../modals/Login";
-import Registration from "../modals/Registration";
+import NavBar from "@components/navigation/NavBar";
+import Home from "@pages/Home";
+import About from "@pages/About";
+import Something from "@pages/Something";
+import Same from "@pages/Same";
+import Login from "@components/modals/Login";
+import Registration from "@components/modals/Registration";
 
 const routes = [
   {
@@ -36,7 +36,7 @@ const routes = [
   },
 ];
 
-const Router = () => {
+const Root = () => {
   const [isLoginModalActive, setLoginModalActive] = useState(false);
   const [isRegisterModalActive, setRegisterModalActive] = useState(false);
 
@@ -66,4 +66,4 @@ const Router = () => {
   );
 };
 
-export default Router;
+export default Root;

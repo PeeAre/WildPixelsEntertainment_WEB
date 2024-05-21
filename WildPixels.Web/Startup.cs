@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Xml.Linq;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using WildPixels.Application.UserProcess;
 using WildPixels.Infrastructure.Data;
 using WildPixels.Infrastructure.Services;
@@ -17,12 +17,15 @@ namespace WildPixels.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
+                    options => options.TokenValidationParameters)
+                .AddCookie("CookieSettings", options => { });
+            services.AddAuthorization();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:MSSQL_Connection"]);
             }, ServiceLifetime.Transient);
-            //var asm = AppDomain.CurrentDomain.GetAssemblies().
-            //    SingleOrDefault(assembly => assembly.GetName().Name == "WildPixels.Application");
             services.AddMediatR(config => config.RegisterServicesFromAssemblyContaining(typeof(UserDTO)));
             services.AddUnitOfWork();
         }
@@ -38,6 +41,11 @@ namespace WildPixels.Web
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseCors(corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin()
+                                                              .AllowAnyMethod()
+                                                              .AllowAnyHeader());
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
@@ -46,9 +54,6 @@ namespace WildPixels.Web
                     pattern: "{controller}/{action}/{id?}");
             });
             app.UseHttpsRedirection();
-            app.UseCors(corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin()
-                                                              .AllowAnyMethod()
-                                                              .AllowAnyHeader());
         }
     }
 }

@@ -43,7 +43,12 @@ namespace WildPixels.Infrastructure.Data.Repositories
 
         public IEnumerable<User> GetAll()
         {
-            throw new NotImplementedException();
+            var users = _dbContext.Users.AsQueryable();
+
+            if (users == null)
+                throw new Exception("Users aren't in database");
+
+            return users;
         }
 
         public User GetById(int id)

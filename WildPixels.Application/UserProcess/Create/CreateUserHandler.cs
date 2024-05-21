@@ -8,6 +8,7 @@ namespace WildPixels.Application.UserProcess.Create
     {
         private IUnitOfWork _unitOfWork;
 
+
         public CreateUserHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;

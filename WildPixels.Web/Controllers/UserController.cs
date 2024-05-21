@@ -4,11 +4,11 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using WildPixels.Application.UserProcess;
 using WildPixels.Application.UserProcess.Create;
-using WildPixels.Web.Controllers.API;
+using WildPixels.Web.Controllers.BaseControllers;
 
 namespace WildPixels.Web.Controllers
 {
-    public class UserController : BaseApiController
+    public class UserController : BaseAPIController
     {
         private IMediator _mediator;
 
@@ -27,6 +27,8 @@ namespace WildPixels.Web.Controllers
 
             if (userDTO == null)
                 return BadRequest("Model invalid");
+
+            //проверять на уникальность
 
             await _mediator.Send(new CreateUserCommand(userDTO));
 
