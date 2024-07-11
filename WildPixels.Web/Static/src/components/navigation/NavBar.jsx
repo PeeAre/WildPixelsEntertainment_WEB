@@ -1,8 +1,8 @@
 import React from "react";
 
-import NavBarButton from "../buttons/NavBarButton";
-import LoginButton from "../buttons/LoginButton";
-import "./NavBar";
+// import NavBarButton from "../buttons/NavBarButton";
+// import LoginButton from "../buttons/LoginButton";
+import "./NavBar_style";
 
 function NavBar(props) {
   const setLoginModalActive = props.setLoginModalActive;
@@ -18,7 +18,7 @@ function NavBar(props) {
         <NavBarButton text="Something" path="something" />
         <NavBarButton text="Same" path="same" />
       </div>
-      <div className="authorization-container">
+      {/* <div className="authorization-container">
         <LoginButton
           text="Sign in"
           clickHandler={() => setLoginModalActive(true)}
@@ -27,7 +27,7 @@ function NavBar(props) {
           text="Sign up"
           clickHandler={() => setRegisterModalActive(true)}
         />
-      </div>
+      </div> */}
     </nav>
   );
 }
