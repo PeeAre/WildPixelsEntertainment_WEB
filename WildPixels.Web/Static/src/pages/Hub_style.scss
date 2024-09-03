@@ -1,0 +1,16 @@
+main {
+  height: 200vh;
+}
+
+.hub-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+canvas {
+  align-self: center;
+  width: 256px;
+  height: 256px;
+}

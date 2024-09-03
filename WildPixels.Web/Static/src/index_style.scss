@@ -6,10 +6,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   background-color: #11042d;
-  background-image: linear-gradient(to bottom, rgba(white, 0) 40%, #11042d),
-    url("@images/background.jpg");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 25%,
+      #11042d
+    ),
+    url("@images/background2.png");
   background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  background-size: 100% 175vh; /* Изменяет размер фона по ширине и высоте */
 }
 
 code {
@@ -46,16 +50,18 @@ dd {
 }
 
 body {
+  box-sizing: border-box;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  overflow: auto;
 }
 
 main {
   width: 100%;
-  height: 200vh;
   padding: 0 2rem;
+  padding-top: 1rem;
 
   .main-wrapper {
     width: 100%;

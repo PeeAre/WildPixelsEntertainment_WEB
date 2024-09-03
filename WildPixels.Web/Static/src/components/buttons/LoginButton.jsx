@@ -1,5 +1,5 @@
 import React from "react";
-import "./LoginButton";
+import "./LoginButton_style";
 
 function LoginButton(props) {
   const text = props.text;

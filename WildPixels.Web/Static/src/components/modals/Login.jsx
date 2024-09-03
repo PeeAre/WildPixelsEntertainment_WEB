@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import SubmitButton from "../buttons/SubmitButton";
 import { IdentityProvider } from "../data/IdentityProvider";
-import "./Login";
+import "./Login_style";
 
 const SignupForm = () => (
   <div className="modal-container" onClick={(x) => x.stopPropagation()}>

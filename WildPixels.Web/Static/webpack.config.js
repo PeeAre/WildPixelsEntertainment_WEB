@@ -18,12 +18,14 @@ module.exports = {
     path: isDevEnvironment
       ? path.resolve(__dirname, "dev_build")
       : path.resolve(__dirname, "build"),
+    publicPath: "/",
     clean: true,
   },
   devtool: isDevEnvironment ? "source-map" : false,
   devServer: {
     port: 3000,
     hot: isDevEnvironment,
+    historyApiFallback: true,
   },
   optimization: {
     minimizer: [new cssMinimizerPlugin(), new jsMinimizerPlugin()],

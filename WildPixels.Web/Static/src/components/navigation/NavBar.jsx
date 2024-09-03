@@ -1,24 +1,44 @@
 import React from "react";
-
-// import NavBarButton from "../buttons/NavBarButton";
-// import LoginButton from "../buttons/LoginButton";
+import NavBarButton from "@components/buttons/NavBarButton";
+import LoginButton from "@components/buttons/LoginButton";
 import "./NavBar_style";
 
-function NavBar(props) {
+const links = [
+  {
+    title: "Hub",
+    url: "/",
+  },
+  {
+    title: "Games",
+    url: "/games",
+  },
+  {
+    title: "Gallery",
+    url: "/gallery",
+  },
+  {
+    title: "Store",
+    url: "/store",
+  },
+];
+
+const NavBar = (props) => {
   const setLoginModalActive = props.setLoginModalActive;
   const setRegisterModalActive = props.setRegisterModalActive;
+  console.log(links);
 
   return (
     <nav>
       <div className="blur-block"></div>
       <div className="logo-container"></div>
       <div className="links-container">
-        <NavBarButton text="Home" path="/" />
-        <NavBarButton text="About" path="about" />
-        <NavBarButton text="Something" path="something" />
-        <NavBarButton text="Same" path="same" />
+        {links.map((link) => {
+          return (
+            <NavBarButton key={link.title} title={link.title} path={link.url} />
+          );
+        })}
       </div>
-      {/* <div className="authorization-container">
+      <div className="authorization-container">
         <LoginButton
           text="Sign in"
           clickHandler={() => setLoginModalActive(true)}
@@ -27,9 +47,10 @@ function NavBar(props) {
           text="Sign up"
           clickHandler={() => setRegisterModalActive(true)}
         />
-      </div> */}
+      </div>
+      <div className="burger-container"></div>
     </nav>
   );
-}
+};
 
 export default NavBar;

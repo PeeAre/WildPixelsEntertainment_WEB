@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./NavBarButton";
+import "./NavBarButton_style";
 
 const params = {
   pagination: {
@@ -17,7 +17,7 @@ const params = {
 function NavBarButton(props) {
   return (
     <Link className="nav-button" to={props.path}>
-      <span>{props.text}</span>
+      <span>{props.title}</span>
     </Link>
   );
 }

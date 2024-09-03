@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./SubmitButton";
+import "./SubmitButton_style";
 
 function SubmitButton(props) {
   const text = props.text;

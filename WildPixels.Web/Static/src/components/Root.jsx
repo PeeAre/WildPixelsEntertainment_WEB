@@ -1,38 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-
 import NavBar from "@components/navigation/NavBar";
-import Home from "@pages/Home";
-import About from "@pages/About";
-import Something from "@pages/Something";
-import Same from "@pages/Same";
+import Hub from "@pages/Hub";
+import Games from "@pages/Games";
+import Gallery from "@pages/Gallery";
+import Store from "@pages/Store";
 import Login from "@components/modals/Login";
 import Registration from "@components/modals/Registration";
 
 const routes = [
   {
-    Page: Home,
-    title: "Home",
+    Page: Hub,
+    title: "Hub",
     path: "/:slug?",
-    url: "/",
   },
   {
-    Page: About,
-    title: "About",
-    path: "/about/:slug?",
-    url: "/about/",
+    Page: Games,
+    title: "Games",
+    path: "/games/:slug?",
   },
   {
-    Page: Something,
-    title: "Something",
-    path: "/something/:slug?",
-    url: "/something/",
+    Page: Gallery,
+    title: "Gallery",
+    path: "/gallery/:slug?",
   },
   {
-    Page: Same,
-    title: "Same",
-    path: "/same/:slug?",
-    url: "/same/",
+    Page: Store,
+    title: "Store",
+    path: "/store/:slug?",
   },
 ];
 
